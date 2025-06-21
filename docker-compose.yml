@@ -7,7 +7,7 @@ services:
       - no-new-privileges:true
     networks:
       - traefik-public
-    command: bun run preview
+    command: bun run preview --host
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
