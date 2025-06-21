@@ -17,12 +17,12 @@ services:
       - "traefik.http.routers.artapp.entrypoints=http"
       - "traefik.http.routers.artapp.rule=Host(`art.jkbro.dev`)"
       - "traefik.http.middlewares.artapp-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.artapp.middlewares=jkdelara-https-redirect"
+      - "traefik.http.routers.artapp.middlewares=artapp-https-redirect"
       - "traefik.http.routers.artapp-secure.entrypoints=https"
       - "traefik.http.routers.artapp-secure.rule=Host(`art.jkbro.dev`)"
       - "traefik.http.routers.artapp-secure.tls=true"
       - "traefik.http.routers.artapp-secure.service=artapp"
-      - "traefik.http.services.jkdelara.loadbalancer.server.port=4173"
+      - "traefik.http.services.artapp.loadbalancer.server.port=4173"
       - "traefik.docker.network=traefik-public"
 networks:
   traefik-public:
